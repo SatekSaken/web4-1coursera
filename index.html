@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывчивый сайт</title>
+  <style>
+    /* Общие стили для мобильных устройств */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    div {
+      width: 100%; /* По умолчанию div элементы занимают 100% ширины */
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Медиа-запрос для планшетов */
+    @media (min-width: 772px) {
+      .container {
+        display: flex;
+        flex-wrap: wrap; /* Элементы div будут располагаться в строку */
+      }
+
+      div {
+        width: 45vw; /* Div элементы займут 45% ширины области просмотра */
+        display: inline-block;
+        margin-right: 20px; /* Добавляем отступ между div элементами */
+      }
+
+      img {
+        max-height: 30vh; /* Изображения не более 30% высоты области просмотра */
+        width: auto;
+      }
+    }
+
+    /* Медиа-запрос для широких экранов */
+    @media (min-width: 998px) {
+      div {
+        width: 30vw; /* Div элементы займут 30% ширины области просмотра */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div>
+      <img src="image1.jpg" alt="Image 1">
+    </div>
+    <div>
+      <img src="image2.jpg" alt="Image 2">
+    </div>
+    <div>
+      <img src="image3.jpg" alt="Image 3">
+    </div>
+  </div>
+
+</body>
+</html>
