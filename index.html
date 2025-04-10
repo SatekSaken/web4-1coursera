@@ -5,73 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Отзывчивый сайт</title>
   <style>
-    /* Общие стили для мобильных устройств */
+    /* Общие стили для всего сайта */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #333;
+      margin: 20px 0;
     }
 
     .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
     }
 
     .div-item {
-      width: 100%; /* По умолчанию div элементы занимают 100% ширины */
+      flex: 1 1 100%; /* Все элементы div будут занимать 100% ширины на мобильных устройствах */
+      max-width: 100%;
       margin-bottom: 20px;
+      transition: all 0.3s ease; /* Плавное изменение размеров */
+      box-sizing: border-box;
     }
 
     img {
       width: 100%;
       height: auto;
       display: block;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
     }
 
-    /* Медиа-запрос для планшетов (ширина экрана от 772px) */
+    .div-item:hover img {
+      transform: scale(1.05); /* Увеличение изображения при наведении */
+    }
+
+    .div-item p {
+      text-align: center;
+      font-size: 1.2em;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    /* Медиа-запрос для планшетов (с шириной экрана от 772px) */
     @media (min-width: 772px) {
       .container {
         display: flex;
-        flex-wrap: wrap; /* Элементы div будут располагаться в строку */
+        justify-content: space-between;
       }
 
       .div-item {
-        width: 45vw; /* Div элементы займут 45% ширины области просмотра */
-        display: inline-block;
-        margin-right: 20px; /* Отступ между div элементами */
+        flex: 1 1 45%; /* Каждый div занимает 45% ширины экрана */
+        margin-right: 10px;
       }
 
       img {
-        max-height: 30vh; /* Изображения ограничены 30% высоты области просмотра */
+        max-height: 30vh; /* Ограничение высоты изображения для планшетов */
         width: auto;
       }
     }
 
-    /* Медиа-запрос для широких экранов (ширина экрана от 998px) */
+    /* Медиа-запрос для широких экранов (с шириной экрана от 998px) */
     @media (min-width: 998px) {
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки для широкой области */
+        gap: 20px;
+      }
+
       .div-item {
-        width: 30vw; /* Div элементы займут 30% ширины области просмотра */
+        flex: 1 1 30%; /* Каждый div занимает 30% ширины экрана */
+      }
+
+      img {
+        max-height: 25vh; /* Ограничение высоты изображения для широких экранов */
+      }
+    }
+
+    /* Стиль для контейнера в виде сетки на больших экранах */
+    @media (min-width: 1200px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr); /* Повторяет 3 колонки */
       }
     }
   </style>
 </head>
 <body>
 
+  <h1>Отзывчивый сайт с медиа-запросами</h1>
+
   <div class="container">
     <div class="div-item">
       <img src="https://source.unsplash.com/random/300x200?nature" alt="Nature Image 1">
+      <p>Природа 1</p>
     </div>
     <div class="div-item">
-      <img src="https://source.unsplash.com/random/300x200?nature" alt="Nature Image 2">
+      <img src="https://source.unsplash.com/random/300x200?landscape" alt="Landscape Image 2">
+      <p>Пейзаж 2</p>
     </div>
     <div class="div-item">
-      <img src="https://source.unsplash.com/random/300x200?landscape" alt="Landscape Image 3">
+      <img src="https://source.unsplash.com/random/300x200?city" alt="City Image 3">
+      <p>Город 3</p>
+    </div>
+    <div class="div-item">
+      <img src="https://source.unsplash.com/random/300x200?mountain" alt="Mountain Image 4">
+      <p>Гора 4</p>
+    </div>
+    <div class="div-item">
+      <img src="https://source.unsplash.com/random/300x200?ocean" alt="Ocean Image 5">
+      <p>Океан 5</p>
+    </div>
+    <div class="div-item">
+      <img src="https://source.unsplash.com/random/300x200?forest" alt="Forest Image 6">
+      <p>Лес 6</p>
     </div>
   </div>
 
 </body>
 </html>
+
