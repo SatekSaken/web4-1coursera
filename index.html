@@ -10,6 +10,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f0f0f0;
     }
 
     .container {
@@ -17,9 +18,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 20px;
     }
 
-    div {
+    .div-item {
       width: 100%; /* По умолчанию div элементы занимают 100% ширины */
       margin-bottom: 20px;
     }
@@ -27,30 +29,31 @@
     img {
       width: 100%;
       height: auto;
+      display: block;
     }
 
-    /* Медиа-запрос для планшетов */
+    /* Медиа-запрос для планшетов (ширина экрана от 772px) */
     @media (min-width: 772px) {
       .container {
         display: flex;
         flex-wrap: wrap; /* Элементы div будут располагаться в строку */
       }
 
-      div {
+      .div-item {
         width: 45vw; /* Div элементы займут 45% ширины области просмотра */
         display: inline-block;
-        margin-right: 20px; /* Добавляем отступ между div элементами */
+        margin-right: 20px; /* Отступ между div элементами */
       }
 
       img {
-        max-height: 30vh; /* Изображения не более 30% высоты области просмотра */
+        max-height: 30vh; /* Изображения ограничены 30% высоты области просмотра */
         width: auto;
       }
     }
 
-    /* Медиа-запрос для широких экранов */
+    /* Медиа-запрос для широких экранов (ширина экрана от 998px) */
     @media (min-width: 998px) {
-      div {
+      .div-item {
         width: 30vw; /* Div элементы займут 30% ширины области просмотра */
       }
     }
@@ -59,14 +62,14 @@
 <body>
 
   <div class="container">
-    <div>
-      <img src="image1.jpg" alt="Image 1">
+    <div class="div-item">
+      <img src="https://source.unsplash.com/random/300x200?nature" alt="Nature Image 1">
     </div>
-    <div>
-      <img src="image2.jpg" alt="Image 2">
+    <div class="div-item">
+      <img src="https://source.unsplash.com/random/300x200?nature" alt="Nature Image 2">
     </div>
-    <div>
-      <img src="image3.jpg" alt="Image 3">
+    <div class="div-item">
+      <img src="https://source.unsplash.com/random/300x200?landscape" alt="Landscape Image 3">
     </div>
   </div>
 
